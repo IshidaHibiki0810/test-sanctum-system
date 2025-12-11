@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# --- Turso / SQLite DB files (CRITICAL for security) ---
+*.sqlite
+*.db
