@@ -6,7 +6,7 @@ import React from 'react';
 // Turso APIから事例データを取得する関数
 async function fetchCaseDataFromAPI() {
   // 環境変数からローカル開発URLを取得
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // ローカルホストをデフォルト値に
+  //const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // ローカルホストをデフォルト値に
 
   // 修正: フルURLを使ってフェッチする
   const res = await fetch(`${baseUrl}/api/cases`, { 
