@@ -41,7 +41,7 @@ export default async function HomePage() {
   return (
     <main style={{ padding: '20px', fontFamily: 'sans-serif' }}>
       <h1 className="text-4xl font-extrabold text-indigo-900 mt-4 mb-4 border-b-2 border-indigo-200 pb-2">
-        Sanctum Order System (Turso API接続テスト)
+        Sanctum Order System (Turso API接続テスト)🚬
       </h1>
       <p>このデータは、作成したサーバーレスAPI（/api/cases）を通じてTurso DBから取得されます。</p>
       
