@@ -12,7 +12,7 @@ async function fetchCaseDataFromAPI() {
   //const res = await fetch(`${baseUrl}/api/cases`, { 
       // キャッシュを無効化（開発中は特に）
   //    cache: 'no-store' 
-  });
+ // });
 
   if (!res.ok) {
     // APIからエラーコードが返された場合のエラーメッセージ
