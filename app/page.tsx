@@ -60,7 +60,7 @@ export default async function HomePage() {
       ) : (
         // データが正常に取得できた場合
         <>
-          <h2>📘 事例一覧 (Turso DBより)</h2>
+          <h2>✌ 事例一覧 (Turso DBより)</h2>
           {cases.length === 0 ? (
             <p>まだデータベースに事例データがありません。テーブルは作成されました。</p>
           ) : (
