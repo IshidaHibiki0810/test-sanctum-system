@@ -9,11 +9,11 @@ async function fetchCaseDataFromAPI() {
   //const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // ローカルホストをデフォルト値に
 
   // 修正: フルURLを使ってフェッチする
-  //const res = await fetch(`${baseUrl}/api/cases`, { 
+  const res = await fetch(`${baseUrl}/api/cases`, { 
       // キャッシュを無効化（開発中は特に）
-  //    cache: 'no-store' 
- // });
-/*
+      cache: 'no-store' 
+ });
+
   if (!res.ok) {
     // APIからエラーコードが返された場合のエラーメッセージ
     const errorText = await res.text();
@@ -23,7 +23,7 @@ async function fetchCaseDataFromAPI() {
 
   // APIから返されたJSONデータ（事例の配列）を返す
   return res.json();
-*/
+
 }
 
 // ページコンポーネント
