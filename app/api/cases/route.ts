@@ -9,8 +9,8 @@ const authToken = process.env.DATABASE_AUTH_TOKEN;
 
 // Tursoクライアントの初期化
 const client = createClient({
-    url: url,
-    authToken: authToken,
+    url: url!,
+    authToken: authToken!,
 });
 
 /**
