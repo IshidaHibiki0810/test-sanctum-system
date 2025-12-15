@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { SiX, SiGithub, SiLinkedin } from 'react-icons/si'; // SNSアイコン (npm install react-iconsが必要です)
+import { TbBackground } from 'react-icons/tb';
 
-// プロフィールデータの型定義
+// 1. データの型定義 (TypeScript Interface)
 interface ProfileData {
   name: string;
   title: string;
@@ -11,44 +12,11 @@ interface ProfileData {
   motto: string;
   skills: string[];
   awards: { year: number; description: string }[];
-  sns: {
-    x: string;
-    github: string;
-    linkedin: string;
+  sns: { 
+    x: string; 
+    github: string; 
+    linkedin: string; 
   };
-}
-
-/*
-// Turso APIから事例データを取得する関数
-async function fetchCaseDataFromAPI() {
-  // 環境変数からローカル開発URLを取得
-  //const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // ローカルホストをデフォルト値に
-
-  // 修正: フルURLを使ってフェッチする
-
-
-  if (!res.ok) {
-    // APIからエラーコードが返された場合のエラーメッセージ
-    const errorText = await res.text();
-    console.error("API Fetch Failed:", errorText);
-    throw new Error('APIからのデータ取得に失敗しました。');
-  }
-
-  // APIから返されたJSONデータ（事例の配列）を返す
-  return res.json();
-
-}*/
-async function fetchCaseDataFromAPI() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/cases`, { cache: 'no-store' });
-
-  if (!res.ok) {
-    const errorText = await res.text();
-    console.error("API Fetch Failed:", errorText);
-    throw new Error('APIからのデータ取得に失敗しました。');
-  }
-
-  return res.json();
 }
 
 // 2. 静的なモックデータ (ダミーデータ)
@@ -69,6 +37,8 @@ const memberProfile: ProfileData = {
     linkedin: "https://www.linkedin.com/in/your_linkedin_account",
   },
 };
+
+
 
 // ページコンポーネント (API接続処理は一時的に削除し、同期的な表示に専念)
 export default function HomePage() {
@@ -104,6 +74,20 @@ export default function HomePage() {
           {profile.motto}
         </p>
       </section>
+
+      {/*画像表示 */}
+      <div className="img">
+        <div className="img-URL">
+            <img src="/img/nakajyo.png" />
+        </div>
+      </div>
+
+      {/*<div className="buttons">
+        <div className="button">
+            <button onClick = {modoru}> ◀︎ </button>
+            <button onClick = {susumu}> ▶︎ </button>
+        </div>
+      </div>
 
       {/* 3. スキル・能力 */}
       <section className="mb-10">
@@ -180,3 +164,4 @@ async function fetchProfileDataFromAPI() {
    return res.json();
 }
 */
+
