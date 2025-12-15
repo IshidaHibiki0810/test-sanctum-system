@@ -24,3 +24,77 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+img{
+
+margin:0 auto;
+overflow:hidden;
+border:solid 1px;
+ margin-bottom: 20px;
+}
+
+#img-URL {
+width:400%;
+background-color:#fff;
+display:flex;
+}
+
+video{
+width:300px;
+margin:0 auto;
+overflow:hidden;
+border:solid 1px;
+ margin-bottom: 20px;
+}
+
+#video-URL {
+width:100%;
+background-color:#fff;
+display:flex;
+}
+
+#buttons {
+
+display:flex;
+width:20em;
+margin:0 auto;
+justify-content:space-around;
+}
+
+
+#buttons button {
+
+width:30%;
+padding:0.4em;
+font-size:1em;
+margin:1em;
+}
+
+.susumu {
+
+animation:susumu 0.4s;
+}
+
+@keyframes susumu {
+
+to {
+
+transform:translate(-25%);
+}
+
+}
+
+
+.modoru {
+
+animation:modoru 0.4s;
+}
+
+
+@keyframes modoru {
+
+from {
+
+transform:translate(-25%);
+
+}}

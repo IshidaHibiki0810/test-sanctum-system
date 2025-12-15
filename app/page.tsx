@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { SiX, SiGithub, SiLinkedin } from 'react-icons/si'; // SNSアイコン (npm install react-iconsが必要です)
+import { TbBackground } from 'react-icons/tb';
 
 // 1. データの型定義 (TypeScript Interface)
 interface ProfileData {
@@ -37,6 +38,8 @@ const memberProfile: ProfileData = {
   },
 };
 
+
+
 // ページコンポーネント (API接続処理は一時的に削除し、同期的な表示に専念)
 export default function HomePage() {
   const profile = memberProfile;
@@ -71,6 +74,28 @@ export default function HomePage() {
           {profile.motto}
         </p>
       </section>
+
+      
+      {/*画像表示 */}
+      <div className="img">
+        <div className="img-URL">
+            <img src="/img/nakajyo.png" />
+        </div>
+      </div>
+
+      {/*動画表示 */}
+      <div className="video">
+        <div className="video-URL">
+            <video src="/video/test.mp4" controls />
+        </div>
+      </div>
+
+      {/*<div className="buttons">
+        <div className="button">
+            <button onClick = {modoru}> ◀︎ </button>
+            <button onClick = {susumu}> ▶︎ </button>
+        </div>
+      </div>
 
       {/* 3. スキル・能力 */}
       <section className="mb-10">
