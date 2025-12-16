@@ -48,6 +48,15 @@ const memberProfile: ProfileData = {
 // ページコンポーネント (API接続処理は一時的に削除し、同期的な表示に専念)
 export default function HomePage() {
   const profile = memberProfile;
+  let cases: any[] = [];
+  let error: string | null = null;
+
+  try {
+    cases = await getCases();
+  } catch (e: any) {
+    error = e.message;
+    console.error(e);
+  }
 
 
   
