@@ -80,15 +80,17 @@ export default function HomePage() {
       <div className="img">
         <div className="img-URL">
             <img src="/img/nakajyo.png" />
+            <img src="/img/robokon.jpg" />
         </div>
       </div>
-
-      {/*動画表示 */}
+  
+      {/*動画表示 
       <div className="video">
         <div className="video-URL">
             <video src="/video/test.mp4" controls />
         </div>
       </div>
+      */}
 
       {/*<div className="buttons">
         <div className="button">
