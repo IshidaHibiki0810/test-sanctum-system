@@ -10,7 +10,7 @@ console.log("DB URL:", DB_URL ?? "undefined");
 console.log("Auth Token:", DB_TOKEN ? "Loaded" : "Missing");
 
 // DBクライアントを作成
-export const db = createClient({
-  url: DB_URL!,
-  authToken: DB_TOKEN,
+export const client = createClient({
+  url: process.env.DATABASE_URL!,
+  authToken: process.env.DATABASE_AUTH_TOKEN!,
 });
