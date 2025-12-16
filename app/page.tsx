@@ -1,8 +1,22 @@
+/*変更点
+12/15: Linkコンポーネントのインポート追加(小倉)
+12/15: リンク追加
+*/
+
+
+
 // app/page.tsx
+
+
+
+
+import Link from "next/link";// Next.jsのLinkコンポーネント(12/15追加:小倉)
 
 import React from 'react';
 import { SiX, SiGithub, SiLinkedin } from 'react-icons/si'; // SNSアイコン (npm install react-iconsが必要です)
 import { TbBackground } from 'react-icons/tb';
+import HamburgerMenu from "./components/HambergerMenu";
+import ImageSlider from "./components/ImageSlider";
 
 // 1. データの型定義 (TypeScript Interface)
 interface ProfileData {
@@ -17,6 +31,7 @@ interface ProfileData {
     github: string; 
     linkedin: string; 
   };
+  links?: { label: string; href: string }[]; // リンク用のオプションフィールド(12/15追加:小倉)
 }
 
 // 2. 静的なモックデータ (ダミーデータ)
@@ -24,6 +39,15 @@ interface ProfileData {
 const memberProfile: ProfileData = {
   name: "中条 俊介",
   title: "過去の栄光に浸る男",
+
+  //リンク追加(12/15:小倉)
+  links: [
+    { label: "About", href: "/" },
+    { label: "過去の歴史", href: "/history" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
+  ],
+
   introduction: "実務的な開発スキルと対人折衝能力の習得を目指し、チームでWebシステム開発に取り組んでいます。ユーザーに寄り添ったシンプルで高速な情報提供システムの構築が得意です。",
   motto: "「成果を形にする力」を重視し、計画だけでなく実行と改善を徹底します。",
   skills: ["TypeScript", "Tailwind CSS", "React/Next.js", "Vite", "SQLite/Turso DB", "要求分析"],
@@ -47,7 +71,7 @@ export default function HomePage() {
   return (
     // Tailwind CSSでレイアウトを適用（最大幅を設定し、中央寄せ）
     <main className="container mx-auto p-4 md:p-8 max-w-4xl font-sans text-gray-800">
-
+      <HamburgerMenu />
       {/* 1. 名前と職種・肩書 */}
       <header className="py-8 border-b border-gray-300 mb-8 text-center">
         <h1 className="text-5xl font-extrabold tracking-tight text-gray-900">
@@ -58,6 +82,9 @@ export default function HomePage() {
         </p>
       </header>
 
+      {/*画像表示 */}
+      <ImageSlider />
+      
       {/* 2. 自己紹介とモットー/熱意 */}
       <section className="mb-10 p-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-2xl font-bold mb-4 border-b pb-2 text-indigo-600">
@@ -74,21 +101,6 @@ export default function HomePage() {
           {profile.motto}
         </p>
       </section>
-
-      
-      {/*画像表示 */}
-      <div className="img">
-        <div className="img-URL">
-            <img src="/img/nakajyo.png" />
-        </div>
-      </div>
-
-      {/*動画表示 */}
-      <div className="video">
-        <div className="video-URL">
-            <video src="/video/test.mp4" controls />
-        </div>
-      </div>
 
       {/*<div className="buttons">
         <div className="button">
@@ -149,6 +161,18 @@ export default function HomePage() {
             © {new Date().getFullYear()} {profile.name}
         </p>
       </footer>
+      {/* 6. プロフィールリンクの表示 追加：12/15小倉 */}
+    <nav className="mb-10 flex justify-center gap-6">
+      {profile.links?.map((link, index) => (
+        <Link 
+          key={index} 
+          href={link.href} 
+          className="text-indigo-600 hover:underline font-medium"
+        >
+          {link.label}
+        </Link>
+      ))}
+    </nav>
     </main>
   );
 }
@@ -172,3 +196,4 @@ async function fetchProfileDataFromAPI() {
    return res.json();
 }
 */
+

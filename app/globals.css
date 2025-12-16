@@ -32,7 +32,7 @@ border:solid 1px;
  margin-bottom: 20px;
 }
 
-#img-URL {
+/*#img-URL {
 width:400%;
 background-color:#fff;
 display:flex;
@@ -51,49 +51,55 @@ width:100%;
 background-color:#fff;
 display:flex;
 }
-
-#buttons {
-
-display:flex;
-width:20em;
-margin:0 auto;
-justify-content:space-around;
-}
-
-
-#buttons button {
-
-width:30%;
-padding:0.4em;
-font-size:1em;
-margin:1em;
-}
-
+*/
 .susumu {
-
 animation:susumu 0.4s;
 }
 
 @keyframes susumu {
-
 to {
-
 transform:translate(-25%);
-}
-
-}
+}}
 
 
 .modoru {
-
 animation:modoru 0.4s;
 }
 
-
 @keyframes modoru {
-
 from {
-
 transform:translate(-25%);
-
 }}
+
+.slider-wrapper {
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.slider-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.slider-button.left {
+  left: 10px;
+}
+
+.slider-button.right {
+  right: 10px;
+}
+
