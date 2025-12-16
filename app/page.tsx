@@ -3,6 +3,8 @@
 import React from 'react';
 import { SiX, SiGithub, SiLinkedin } from 'react-icons/si'; // SNSアイコン (npm install react-iconsが必要です)
 import { TbBackground } from 'react-icons/tb';
+import HamburgerMenu from './components/HambergerMenu';
+import ImageSlider from './components/ImageSlider';
 
 // 動的 SSR（Vercel 安定）
 export const dynamic = 'force-dynamic';
@@ -52,7 +54,7 @@ export default function HomePage() {
   return (
     // Tailwind CSSでレイアウトを適用（最大幅を設定し、中央寄せ）
     <main className="container mx-auto p-4 md:p-8 max-w-4xl font-sans text-gray-800">
-
+      <HamburgerMenu />
       {/* 1. 名前と職種・肩書 */}
       <header className="py-8 border-b border-gray-300 mb-8 text-center">
         <h1 className="text-5xl font-extrabold tracking-tight text-gray-900">
@@ -62,6 +64,8 @@ export default function HomePage() {
           {profile.title}
         </p>
       </header>
+
+      <ImageSlider />
 
       {/* 2. 自己紹介とモットー/熱意 */}
       <section className="mb-10 p-6 bg-white shadow-lg rounded-lg">
@@ -80,12 +84,6 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/*画像表示 */}
-      <div className="img">
-        <div className="img-URL">
-            <img src="/img/nakajyo.png" />
-        </div>
-      </div>
 
       {/*<div className="buttons">
         <div className="button">
