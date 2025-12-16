@@ -4,6 +4,9 @@ import React from 'react';
 import { SiX, SiGithub, SiLinkedin } from 'react-icons/si'; // SNSアイコン (npm install react-iconsが必要です)
 import { TbBackground } from 'react-icons/tb';
 
+// 動的 SSR（Vercel 安定）
+export const dynamic = 'force-dynamic';
+
 // 1. データの型定義 (TypeScript Interface)
 interface ProfileData {
   name: string;
@@ -43,6 +46,16 @@ const memberProfile: ProfileData = {
 // ページコンポーネント (API接続処理は一時的に削除し、同期的な表示に専念)
 export default function HomePage() {
   const profile = memberProfile;
+
+  let cases: any[] = [];
+  let error: string | null = null;
+
+  try {
+    cases = await getCases();
+  } catch (e: any) {
+    error = e.message;
+    console.error(e);
+  }
   
   return (
     // Tailwind CSSでレイアウトを適用（最大幅を設定し、中央寄せ）
