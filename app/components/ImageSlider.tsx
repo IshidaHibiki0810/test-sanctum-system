@@ -4,9 +4,9 @@ import { useState } from "react";
 
 export default function ImageSlider() {
   const images = [
-    "/img/nakajyo.png",
-    "/img/robokon.jpg",
-    "/img/bombers.jpg",
+    "/img/test1.jpg",
+    "/img/test2.jpg",
+    "/img/test3.jpg",
   ];
 
   const [index, setIndex] = useState(0);
