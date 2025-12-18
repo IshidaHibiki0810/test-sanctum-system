@@ -1,7 +1,7 @@
 // app/page.tsx
 
 import React from 'react';
-import { SiX, SiGithub, SiLinkedin } from 'react-icons/si'; // SNSアイコン (npm install react-iconsが必要です)
+import { SiX, SiInstagram , SiLinkedin } from 'react-icons/si'; // SNSアイコン (npm install react-iconsが必要です)
 import { TbBackground } from 'react-icons/tb';
 import HamburgerMenu from './components/HambergerMenu';
 import ImageSlider from './components/ImageSlider';
@@ -20,7 +20,7 @@ interface ProfileData {
   awards: { year: number; description: string }[];
   sns: { 
     x: string; 
-    github: string; 
+    instagram: string; 
     linkedin: string; 
   };
 }
@@ -39,8 +39,9 @@ const memberProfile: ProfileData = {
   ],
   sns: {
     x: "https://x.com/your_x_account",
-    github: "https://github.com/your_github_account",
+    instagram: "https://www.instagram.com/syunsuke_0522?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     linkedin: "https://www.linkedin.com/in/your_linkedin_account",
+
   },
 };
 export const metadata = {
@@ -131,9 +132,9 @@ export default function HomePage() {
              className="text-gray-500 hover:text-indigo-600 transition duration-300" aria-label="X (Twitter)">
             <SiX size={30} />
           </a>
-          <a href={profile.sns.github} target="_blank" rel="noopener noreferrer" 
-             className="text-gray-500 hover:text-indigo-600 transition duration-300" aria-label="GitHub">
-            <SiGithub size={30} />
+          <a href={profile.sns.instagram} target="_blank" rel="noopener noreferrer" 
+             className="text-gray-500 hover:text-indigo-600 transition duration-300" aria-label="Instagram">
+            <SiInstagram size={30} />
           </a>
           <a href={profile.sns.linkedin} target="_blank" rel="noopener noreferrer" 
              className="text-gray-500 hover:text-indigo-600 transition duration-300" aria-label="LinkedIn">

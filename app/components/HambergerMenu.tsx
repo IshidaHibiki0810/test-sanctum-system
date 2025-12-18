@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const sns = { 
     x: "https://x.com/your_x_account", 
-    github: "https://github.com/your_github_account", 
+    instagram: "https://www.instagram.com/syunsuke_0522?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     linkedin: "https://www.linkedin.com/in/your_linkedin_account", 
   };
 
@@ -36,7 +36,7 @@ export default function HamburgerMenu() {
                 <li><a href="/blog">ブログ</a></li>
                 <li><a href="/contact">お問い合わせ</a></li>
                 <li><a href={sns.x} target="_blank" rel="noopener noreferrer">X</a></li>
-                <li><a href={sns.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href={sns.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></li>
                 <li><a href={sns.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             </ul>
         </nav>
