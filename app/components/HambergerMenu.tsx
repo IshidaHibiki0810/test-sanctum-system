@@ -17,7 +17,7 @@ export default function HamburgerMenu() {
           cursor: "pointer",
           position: "fixed",
           top: "30px",
-          right: "250px",
+          right: "60px",
           zIndex: 1001,
         }}
        aria-label="メニュー切り替え"

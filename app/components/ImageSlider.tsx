@@ -6,7 +6,7 @@ export default function ImageSlider() {
   const images = [
     "/img/nakajyo.png",
     "/img/robokon.jpg",
-    "/img/c.svg",
+    "/img/bombers.jpg",
     "/img/d.svg",
   ];
 
