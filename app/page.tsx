@@ -5,6 +5,7 @@ import { SiX, SiGithub, SiLinkedin } from 'react-icons/si'; // SNSアイコン (
 import { TbBackground } from 'react-icons/tb';
 import HamburgerMenu from './components/HambergerMenu';
 import ImageSlider from './components/ImageSlider';
+import ToTopButton from './components/ToTopButton';
 
 // 動的 SSR（Vercel 安定）
 export const dynamic = 'force-dynamic';
@@ -43,7 +44,9 @@ const memberProfile: ProfileData = {
   },
 };
 
-
+export const metadata = {
+  viewport: "width=device-width, initial-scale=1",
+};
 
 // ページコンポーネント (API接続処理は一時的に削除し、同期的な表示に専念)
 export default function HomePage() {
@@ -53,6 +56,7 @@ export default function HomePage() {
     // Tailwind CSSでレイアウトを適用（最大幅を設定し、中央寄せ）
     <main className="container mx-auto p-4 md:p-8 max-w-4xl font-sans text-gray-800">
       <HamburgerMenu />
+      <ToTopButton />
       {/* 1. 名前と職種・肩書 */}
       <header className="py-8 border-b border-gray-300 mb-8 text-center">
         <h1 className="text-5xl font-extrabold tracking-tight text-gray-900">
@@ -81,14 +85,6 @@ export default function HomePage() {
           {profile.motto}
         </p>
       </section>
-
-
-      {/*<div className="buttons">
-        <div className="button">
-            <button onClick = {modoru}> ◀︎ </button>
-            <button onClick = {susumu}> ▶︎ </button>
-        </div>
-      </div>
 
       {/* 3. スキル・能力 */}
       <section className="mb-10">

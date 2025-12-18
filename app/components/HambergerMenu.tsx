@@ -2,24 +2,20 @@
 
 import { useState } from "react";
 
+const sns = { 
+    x: "https://x.com/your_x_account", 
+    github: "https://github.com/your_github_account", 
+    linkedin: "https://www.linkedin.com/in/your_linkedin_account", 
+  };
+
 export default function HamburgerMenu() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       {/* ハンバーガーボタン */}
-      <button
+      <button className="humbergerbutton"
         onClick={() => setOpen(!open)}
-        style={{
-          fontSize: "40px",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          position: "fixed",
-          top: "30px",
-          right: "60px",
-          zIndex: 1001,
-        }}
        aria-label="メニュー切り替え"
       >
         {open ? "✕" : "☰"}
@@ -27,40 +23,21 @@ export default function HamburgerMenu() {
 
       {/* オーバーレイ（背景） */}
       {open && (
-        <div
+        <div className="overlay"
           onClick={() => setOpen(false)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(0, 0, 0, 0.4)",
-            zIndex: 1000,
-          }}
         />
       )}
 
       {/* スライドメニュー */}
-        <nav className="menu"
-            style={{
-                position: "fixed",
-                top: 0,
-                right: 0,
-                height: "100vh",
-                width: "200px",
-                background: "#bbffffff",
-                transform: open ? "translateX(0)" : "translateX(100%)",
-                transition: "transform 0.3s ease",
-                zIndex: 1002,
-                display: "flex",
-                alignItems: "flex-start",
-                paddingTop: "80px",
-                paddingLeft: "60px",
-            }}
-            >
-            <ul style={{ listStyle: "none", padding: 0 ,textAlign: "center",lineHeight:"3.5em"}}>
+        <nav className={`menu ${open ? "open" : ""}`}>
+            <ul className="menulist">
                 <li><a href="/">トップページ</a></li>
                 <li><a href="/history">過去の歴史</a></li>
                 <li><a href="/blog">ブログ</a></li>
                 <li><a href="/contact">お問い合わせ</a></li>
+                <li><a href={sns.x} target="_blank" rel="noopener noreferrer">X</a></li>
+                <li><a href={sns.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href={sns.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             </ul>
         </nav>
     </>

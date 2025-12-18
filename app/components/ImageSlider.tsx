@@ -7,7 +7,6 @@ export default function ImageSlider() {
     "/img/nakajyo.png",
     "/img/robokon.jpg",
     "/img/bombers.jpg",
-    "/img/d.svg",
   ];
 
   const [index, setIndex] = useState(0);
