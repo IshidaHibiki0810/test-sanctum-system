@@ -43,10 +43,16 @@ const memberProfile: ProfileData = {
     linkedin: "https://www.linkedin.com/in/your_linkedin_account",
   },
 };
-
 export const metadata = {
-  viewport: "width=device-width, initial-scale=1",
+  title: "My App",
+  description: "説明文",
 };
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 
 // ページコンポーネント (API接続処理は一時的に削除し、同期的な表示に専念)
 export default function HomePage() {
