@@ -45,13 +45,7 @@ const memberProfile: ProfileData = {
   },
 };
 export const metadata = {
-  title: "My App",
-  description: "説明文",
-};
-
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
+  viewport: "width=device-width, initial-scale=1",
 };
 
 
