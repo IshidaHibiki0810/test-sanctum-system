@@ -59,16 +59,6 @@ export const viewport = {
 export default function HomePage() {
   const profile = memberProfile;
 
-    let cases: any[] = [];
-  let error: string | null = null;
-
-  try {
-    cases = await getCases();
-  } catch (e: any) {
-    error = e.message;
-    console.error(e);
-  }
-
   
   return (
     // Tailwind CSSでレイアウトを適用（最大幅を設定し、中央寄せ）
