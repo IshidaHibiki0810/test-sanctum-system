@@ -48,8 +48,6 @@ const memberProfile: ProfileData = {
 // ページコンポーネント (API接続処理は一時的に削除し、同期的な表示に専念)
 export default function HomePage() {
   const profile = memberProfile;
-
-
   
   return (
     // Tailwind CSSでレイアウトを適用（最大幅を設定し、中央寄せ）
