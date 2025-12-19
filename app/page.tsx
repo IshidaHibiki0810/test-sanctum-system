@@ -83,31 +83,46 @@ export default function HomePage() {
 
         {/* --- 4. コンテンツセクション --- */}
         <div className="max-w-5xl mx-auto px-6">
-          {/* 自己紹介 */}
-          <section id="about" className="py-20 grid md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[4/5] bg-[#EBE7E0] rounded-[3rem] overflow-hidden shadow-inner flex items-center justify-center text-[#CDC7BD]">
-              <HiOutlineUser size={80} />
-            </div>
-            <div>
-              <h3 className="text-xs font-black uppercase tracking-[0.3em] text-[#C5A59E] mb-6 flex items-center gap-2">
-                <span className="w-6 h-[1px] bg-[#C5A59E]"></span> 自己紹介
-              </h3>
-              <h4 className="text-3xl font-serif mb-6 text-[#4A443F]">{profile.name}</h4>
-              <p className="text-lg leading-[1.8] text-[#7A7167] mb-8 font-light">
-                {profile.introduction}
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-white border border-[#F2EDE9] rounded-2xl">
-                  <p className="text-[10px] font-bold text-[#B5ADA5] uppercase mb-1">役割</p>
-                  <p className="text-sm font-bold text-[#5C544E]">{profile.role}</p>
-                </div>
-                <div className="p-4 bg-white border border-[#F2EDE9] rounded-2xl">
-                  <p className="text-[10px] font-bold text-[#B5ADA5] uppercase mb-1">活動拠点</p>
-                  <p className="text-sm font-bold text-[#5C544E]">東京 / 全国対応</p>
-                </div>
-              </div>
-            </div>
-          </section>
+{/* 自己紹介セクション：IDを指定してナビゲーションから遷移可能に */}
+  <section id="about" className="py-20 grid md:grid-cols-2 gap-12 items-center">
+    
+    {/* プロフィール画像エリア：
+        rounded-[3rem]で角を大きく丸め、overflow-hiddenで画像をその形に切り抜きます */}
+    <div className="relative aspect-[4/5] bg-[#EBE7E0] rounded-[3rem] overflow-hidden shadow-sm group">
+      <img 
+        src="/img/nakajyo.png" // 指定いただいたパス
+        alt={`${profile.name}のプロフィール写真`} // アクセシビリティ：誰の写真かを明示
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+      />
+      
+      {/* デザインの仕上げ：
+          画像の上に非常に薄いトープ色のレイヤーを重ねて、サイト全体の配色と馴染ませます */}
+      <div className="absolute inset-0 bg-[#8E7D73]/5 pointer-events-none" />
+    </div>
+
+    {/* テキストコンテンツエリア */}
+    <div>
+      <h3 className="text-xs font-black uppercase tracking-[0.3em] text-[#C5A59E] mb-6 flex items-center gap-2">
+        <span className="w-6 h-[1px] bg-[#C5A59E]"></span> 自己紹介
+      </h3>
+      <h4 className="text-3xl font-serif mb-6 text-[#4A443F]">{profile.name}</h4>
+      <p className="text-lg leading-[1.8] text-[#7A7167] mb-8 font-light italic">
+        {profile.introduction}
+      </p>
+
+      {/* 詳細情報カード：視覚的に整理して専門性を提示 */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="p-5 bg-white border border-[#F2EDE9] rounded-2xl shadow-sm">
+          <p className="text-[10px] font-bold text-[#B5ADA5] uppercase tracking-widest mb-1">役割</p>
+          <p className="text-sm font-bold text-[#5C544E]">{profile.role}</p>
+        </div>
+        <div className="p-5 bg-white border border-[#F2EDE9] rounded-2xl shadow-sm">
+          <p className="text-[10px] font-bold text-[#B5ADA5] uppercase tracking-widest mb-1">活動拠点</p>
+          <p className="text-sm font-bold text-[#5C544E]">東京 / 全国対応</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
           {/* クイックリンク */}
           <section className="py-20 border-t border-[#F2EDE9]">
