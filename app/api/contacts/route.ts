@@ -31,11 +31,16 @@ export async function POST(request: Request) {
       );
     }
 
+    // ✅ 日本時間（JST）ISO文字列
+    const jstDate = new Date(
+      new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })
+    ).toISOString();
+
     await client.execute({
       sql: `
         INSERT INTO contacts
-          (name, email, subject, message, status)
-        VALUES (?, ?, ?, ?, ?)
+          (name, email, subject, message, status, created_at)
+        VALUES (?, ?, ?, ?, ?, ?)
       `,
       args: [
         String(name),
@@ -43,6 +48,7 @@ export async function POST(request: Request) {
         "Webサイトからのお問い合わせ",
         String(message),
         "New",
+        jstDate,
       ],
     });
 
