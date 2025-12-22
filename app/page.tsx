@@ -14,9 +14,9 @@ import {
 
 const profile = {
   name: "中条 俊介",
-  role: "Webデザイナー / コンサルタント",
-  concept: "日常を少しだけ、特別にするデザイン。",
-  introduction: "暮らしに溶け込み、使うたびに心がふわりと軽くなる。そんな優しく、凛としたWebサイトを制作しています。30代からの新しい挑戦や、想いのこもったビジネスをデザインの力でお手伝いします。",
+  role: "専門校生",
+  concept: "中条俊介　過去に浸るホームページ",
+  introduction: "小学校1年からサッカーをはじめ、20歳まで本気でサッカーをしていました。過去の記録に浸りたい気分　なので、仕方ないから見てやるよって方は、見ていただける、と有難いです。",
 };
 
 export default function HomePage() {
@@ -62,7 +62,7 @@ export default function HomePage() {
           <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#E9E4E0] rounded-full blur-3xl opacity-50" />
           
           <div className="text-center px-6">
-            <p className="text-[#C5A59E] font-bold tracking-[0.2em] text-sm mb-6 animate-fade-in italic">穏やかな時間をデザインする</p>
+            <p className="text-[#C5A59E] font-bold tracking-[0.2em] text-sm mb-6 animate-fade-in italic"></p>
             <h2 className="text-3xl md:text-5xl font-serif text-[#4A443F] leading-[1.4] mb-10">
               {profile.concept}
             </h2>
@@ -118,7 +118,7 @@ export default function HomePage() {
         </div>
         <div className="p-5 bg-white border border-[#F2EDE9] rounded-2xl shadow-sm">
           <p className="text-[10px] font-bold text-[#B5ADA5] uppercase tracking-widest mb-1">活動拠点</p>
-          <p className="text-sm font-bold text-[#5C544E]">東京 / 全国対応</p>
+          <p className="text-sm font-bold text-[#5C544E]">関西圏</p>
         </div>
       </div>
     </div>
