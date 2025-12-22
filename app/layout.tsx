@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sanctum Order System", 
   description: "Turso DB & NextAuth.js Integration",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
