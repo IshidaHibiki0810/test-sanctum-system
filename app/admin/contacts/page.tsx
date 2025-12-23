@@ -10,7 +10,7 @@ import {
   HiOutlineUserCircle,
   HiHome
 } from 'react-icons/hi';
-import AdminHeader from '../../components/AdminHeader'; // パスはプロジェクトに合わせて調整
+import AdminHeader from '@/app/components/AdminHeader'; // パスはプロジェクトに合わせて調整
 
 interface Contact {
   id: number;

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import React from 'react';
 import { HiChevronRight, HiOutlineArrowLeft, HiHome } from 'react-icons/hi';
 import EditFormStatus from '../../../../components/EditFormStatus'; 
-import AdminHeader from '../../../../components/AdminHeader'; // パスを調整してください
+import AdminHeader from '@/app/components/AdminHeader'; // パスを調整してください
 
 interface EditPageProps {
   params: Promise<{ id: string }>;

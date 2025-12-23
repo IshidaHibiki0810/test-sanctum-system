@@ -4,7 +4,7 @@ import { getDbClient } from '@/lib/db';
 import Link from 'next/link';
 import { togglePublishStatus } from './actions'; 
 import DeleteButton from '../../components/DeleteButton';
-import AdminHeader from '../../components/AdminHeader'; // パスをプロジェクトに合わせて調整
+import AdminHeader from '@/app/components/AdminHeader'; // パスをプロジェクトに合わせて調整
 import { 
   HiOutlinePhotograph, 
   HiOutlinePlus, 
